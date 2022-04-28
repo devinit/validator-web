@@ -11,8 +11,8 @@ on:
     - cron: "27 04 * * *" # 0424am daily
 
 env:
-  STORAGE_ACCOUNT_NAME: savuetemplate # storage account name
-  STORAGE_ACCOUNT_KEY: ${{ secrets.STORAGE_KEY }} # storage account key
+  STORAGE_ACCOUNT_NAME: savalidatorwebvuedev # storage account name
+  STORAGE_ACCOUNT_KEY: ${{ secrets.DEV_STORAGE_KEY }} # storage account key
 
 jobs:
   should_run:
@@ -65,5 +65,5 @@ jobs:
       - name: Cypress CI Run
         uses: cypress-io/github-action@v2
         with:
-          wait-on: "https://vue-template.iatistandard.org"
+          wait-on: "https://dev-validator-vue.iatistandard.org"
           config-file: cypress/envs/cypress.development.json
